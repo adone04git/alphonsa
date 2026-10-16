@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALPHONSA SPICES | Spices from the misty hills of Idukki</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        forest: {
+                            950: '#071f18',
+                            900: '#0f382c',
+                            800: '#144534',
+                            700: '#1b5b46',
+                            600: '#23735a',
+                            100: '#e1ede8',
+                            50: '#f2f7f5'
+                        },
+                        gold: {
+                            300: '#f5e4a8',
+                            400: '#e5ca68',
+                            500: '#d4af37',
+                            600: '#c5a059',
+                            700: '#a38038',
+                            800: '#755a21'
+                        },
+                        cream: '#fdfcf7'
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #fdfcf7;
+            color: #0d2820;
+        }
+        h1, h2, h3, h4, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-pattern {
+            background-color: #071f18;
+            background-image: radial-gradient(rgba(212, 175, 55, 0.15) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #f5e4a8 0%, #d4af37 50%, #c5a059 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border {
+            border-image: linear-gradient(to right, #d4af37, #f5e4a8, #c5a059) 1;
+        }
+        .glass-header {
+            background: rgba(15, 56, 44, 0.95);
+            backdrop-filter: blur(12px);
+        }
+        .modal-blur {
+            backdrop-filter: blur(8px);
+        }
+    </style>
+</head>
+<body class="antialiased text-forest-950 selection:bg-gold-500 selection:text-forest-950">
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 bg-forest-900 text-white px-6 py-3.5 rounded-2xl shadow-2xl border border-gold-500/40 flex items-center space-x-3 text-sm font-medium">
+        <i id="toast-icon" class="fa-solid fa-circle-check text-gold-400 text-lg"></i>
+        <span id="toast-message">Copied to clipboard!</span>
+    </div>
+
+    <!-- Floating WhatsApp Action Mobile Button -->
+    <div class="fixed bottom-6 right-6 z-40 sm:hidden flex flex-col space-y-3">
+        <a href="https://wa.me/917907366078?text=Hello%20Alphonsa%20Spices%2C%20I%20am%20interested%20in%20ordering%20spices." target="_blank" class="w-14 h-14 rounded-full bg-emerald-600 text-white shadow-2xl flex items-center justify-center text-2xl border-2 border-gold-400 hover:scale-110 transition-transform">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- Top Announcement & Quick Contact Bar -->
+    <div class="bg-forest-950 text-gold-300 text-xs py-2.5 px-4 border-b border-gold-500/20">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 text-center sm:text-left">
+            <div class="flex flex-wrap items-center justify-center sm:justify-start gap-4">
+                <span><i class="fa-solid fa-location-dot text-gold-500 mr-1.5"></i> Vellaramkunnu, Idukki, Kerala - 685535</span>
+                <span class="hidden md:inline"><i class="fa-solid fa-envelope text-gold-500 mr-1.5"></i> alphonsaspices26@gmail.com</span>
+            </div>
+            <div class="flex items-center space-x-4 font-semibold text-white">
+                <a href="tel:7907366078" class="hover:text-gold-400 transition-colors"><i class="fa-solid fa-phone text-gold-500 mr-1"></i> 7907366078</a>
+                <span>|</span>
+                <a href="tel:7907308602" class="hover:text-gold-400 transition-colors">7907308602</a>
+                <span>|</span>
+                <a href="tel:9947960821" class="hover:text-gold-400 transition-colors">9947960821</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Navigation Header -->
+    <header class="sticky top-0 z-40 glass-header border-b border-gold-500/20 shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
+            
+            <!-- Logo Vector Branding matching uploaded logo design -->
+            <a href="#home" class="flex items-center space-x-3 group">
+                <div class="flex items-center">
+                    <svg viewBox="0 0 340 100" class="h-14 sm:h-16 w-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Left Forest Green Stem of 'A' -->
+                        <path d="M50 12 L20 75 L34 75 L50 42 Z" fill="#0f382c" />
+                        <path d="M50 12 L20 75 L10 75 L45 12 Z" fill="#144534" />
+                        
+                        <!-- Right Gold Stem of 'A' -->
+                        <path d="M50 12 L80 75 L66 75 L50 42 Z" fill="#d4af37" />
+                        <path d="M50 12 L80 75 L90 75 L55 12 Z" fill="#c5a059" />
+                        
+                        <!-- Golden Swoosh Arch across 'A' -->
+                        <path d="M15 58 C 45 40, 75 42, 98 52 C 70 42, 35 48, 15 58 Z" fill="#f5e4a8" />
+                        <path d="M15 58 C 45 42, 75 44, 98 52 C 70 45, 38 52, 15 58 Z" fill="#d4af37" />
+                        
+                        <!-- Text ALPHONSA -->
+                        <text x="110" y="52" fill="#FFFFFF" font-family="'Playfair Display', serif" font-weight="900" font-size="34" letter-spacing="1">ALPHONSA</text>
+                        
+                        <!-- Golden Divider and SPICES -->
+                        <line x1="110" y1="65" x2="155" y2="65" stroke="#d4af37" stroke-width="2"/>
+                        <text x="162" y="72" fill="#d4af37" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="16" letter-spacing="7">SPICES</text>
+                        <line x1="285" y1="65" x2="330" y2="65" stroke="#d4af37" stroke-width="2"/>
+                    </svg>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden lg:flex items-center space-x-8 text-sm font-semibold tracking-wider text-emerald-100">
+                <a href="#home" class="hover:text-gold-400 transition-colors py-2">Home</a>
+                <a href="#about" class="hover:text-gold-400 transition-colors py-2">About Us</a>
+                <a href="#products" class="hover:text-gold-400 transition-colors py-2">Products</a>
+                <a href="#reviews" class="hover:text-gold-400 transition-colors py-2">Customer Reviews</a>
+                <a href="#location" class="hover:text-gold-400 transition-colors py-2">Location of Shop</a>
+                <a href="#contact" class="hover:text-gold-400 transition-colors py-2">Contact Us</a>
+            </nav>
+
+            <!-- Quick WhatsApp Action CTA -->
+            <div class="hidden sm:flex items-center space-x-3">
+                <a href="https://wa.me/917907366078?text=Hello%20Alphonsa%20Spices%2C%20I%20would%20like%20to%20place%20an%20order." target="_blank" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-400 hover:to-gold-500 text-forest-950 font-extrabold text-xs tracking-wider uppercase shadow-lg shadow-gold-500/20 transition-all transform hover:-translate-y-0.5 flex items-center space-x-2">
+                    <i class="fa-brands fa-whatsapp text-base"></i>
+                    <span>Order On WhatsApp</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobile-menu-btn" class="lg:hidden text-gold-400 text-2xl p-2 focus:outline-none" aria-label="Toggle Navigation Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-forest-950 border-b border-gold-500/20 px-6 py-6 shadow-2xl">
+            <div class="flex flex-col space-y-4 text-emerald-100 font-medium">
+                <a href="#home" class="mobile-link hover:text-gold-400 text-lg">Home</a>
+                <a href="#about" class="mobile-link hover:text-gold-400 text-lg">About Us</a>
+                <a href="#products" class="mobile-link hover:text-gold-400 text-lg">Products Showcase</a>
+                <a href="#reviews" class="mobile-link hover:text-gold-400 text-lg">Customer Reviews</a>
+                <a href="#location" class="mobile-link hover:text-gold-400 text-lg">Location of Shop</a>
+                <a href="#contact" class="mobile-link hover:text-gold-400 text-lg">Contact Us</a>
+                
+                <div class="pt-4 border-t border-forest-800 flex flex-col gap-3">
+                    <a href="https://wa.me/917907366078" target="_blank" class="w-full text-center py-3 rounded-xl bg-gold-500 text-forest-950 font-bold text-sm">
+                        <i class="fa-brands fa-whatsapp mr-2"></i> WhatsApp Order: 7907366078
+                    </a>
+                    <a href="tel:7907308602" class="w-full text-center py-3 rounded-xl bg-forest-800 text-white font-bold text-sm border border-gold-500/30">
+                        <i class="fa-solid fa-phone mr-2"></i> Call Us: 7907308602
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative hero-pattern pt-16 pb-24 lg:pt-24 lg:pb-32 text-white overflow-hidden border-b border-gold-500/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Text Column -->
+                <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-forest-900 border border-gold-500/40 text-gold-300 text-xs sm:text-sm font-semibold uppercase tracking-widest shadow-xl">
+                        <i class="fa-solid fa-mountain-sun text-gold-400"></i>
+                        <span>A venture of Adone Saju Vettickal</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-bold font-serif tracking-tight leading-tight">
+                        ALPHONSA SPICES
+                        <span class="block text-2xl sm:text-4xl lg:text-5xl italic font-normal text-gold-300 font-serif mt-2">
+                            Spices from the misty hills of idukki
+                        </span>
+                    </h1>
+
+                    <p class="text-emerald-100 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+                        From the heart of Idukki to your home, we bring you purity, freshness, and the true taste of nature
+                
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#products" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-400 hover:to-gold-500 text-forest-950 font-extrabold text-sm tracking-wider uppercase shadow-2xl shadow-gold-500/30 transition-all transform hover:-translate-y-1 flex items-center justify-center space-x-3">
+                            <i class="fa-solid fa-leaf text-lg"></i>
+                            <span>Browse Product Collection</span>
+                        </a>
+                        <a href="#location" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-forest-900 hover:bg-forest-800 text-white font-bold text-sm border border-gold-500/40 transition-all flex items-center justify-center space-x-3">
+                            <i class="fa-solid fa-location-dot text-gold-400"></i>
+                            <span>Visit Our Shop</span>
+                        </a>
+                    </div>
+
+                    <!-- Trust Bar -->
+                    <div class="pt-8 border-t border-forest-800/80 grid grid-cols-2 sm:grid-cols-3 gap-4 text-left">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-lg bg-forest-900 border border-gold-500/30 flex items-center justify-center text-gold-400 font-bold">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-white uppercase">FSSAI Certified</p>
+                                <p class="text-[10px] text-emerald-300">Lic: 21326178000581</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-lg bg-forest-900 border border-gold-500/30 flex items-center justify-center text-gold-400 font-bold">
+                                <i class="fa-solid fa-file-invoice"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-white uppercase">GST Registered</p>
+                                <p class="text-[10px] text-emerald-300">GSTIN: 32PAVPS3058G1ZY</p>
+                            </div>
+                        </div>
+                        <div class="col-span-2 sm:col-span-1 flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-lg bg-forest-900 border border-gold-500/30 flex items-center justify-center text-gold-400 font-bold">
+                                <i class="fa-solid fa-truck-fast"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-white uppercase">All India Delivery</p>
+                                <p class="text-[10px] text-emerald-300">Direct Shipping</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right Brand Graphic Hero Card -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative rounded-3xl bg-gradient-to-b from-forest-900 to-forest-950 p-3 border-2 border-gold-500/40 shadow-2xl">
+                        <img src="Alphonsa Spices_ Misty Hills Cardamom Branding.png" alt="Alphonsa Spices Misty Hills Cardamom Branding" class="w-full h-auto rounded-2xl object-cover shadow-inner">
+                        
+                        <!-- Floating Badge -->
+                        <div class="absolute -bottom-6 -left-6 bg-forest-900 text-white p-4 rounded-2xl border border-gold-500/50 shadow-2xl hidden sm:flex items-center space-x-3 max-w-xs">
+                            <div class="w-12 h-12 rounded-xl bg-gold-500 text-forest-950 flex items-center justify-center text-2xl font-black flex-shrink-0">
+                                <i class="fa-solid fa-seedling"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-gold-300 uppercase">100% Pure & Authentic</p>
+                                <p class="text-[11px] text-emerald-100 leading-tight">Directly sourced from farmer's of Vellaramkunnu.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Branding & Photo Gallery Showcase Section -->
+    <section class="py-20 bg-cream border-b border-forest-800/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-gold-700 font-bold text-xs uppercase tracking-widest px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30">Authentic Visual Showcase</span>
+                <h2 class="text-3xl sm:text-5xl font-bold font-serif text-forest-950 mt-3">The Journey of Pure Flavour</h2>
+                <p class="mt-4 text-slate-600 text-sm sm:text-base">Explore our actual harvest, pouch design, and high-altitude cardamom quality from Vellaramkunnu.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Gallery Item 1: Packaging Pouch -->
+                <div class="group rounded-3xl bg-white border border-forest-800/10 p-3 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between">
+                    <div class="overflow-hidden rounded-2xl bg-forest-900">
+                        <img src="CARDAMOM 2.jpg" alt="Alphonsa Spices Green Cardamom Packaging Pouch" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-4 text-center">
+                        <span class="text-[10px] uppercase font-bold text-gold-700 bg-gold-500/10 px-2.5 py-1 rounded-md">Official Pouch Pack</span>
+                        <h3 class="font-bold font-serif text-forest-950 text-base mt-2">Premium Green Cardamom</h3>
+                        <p class="text-xs text-slate-500 mt-1">Handpicked from idukki's misty hills</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2: Fresh Harvest Pods in Hand -->
+                <div class="group rounded-3xl bg-white border border-forest-800/10 p-3 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between">
+                    <div class="overflow-hidden rounded-2xl bg-forest-900">
+                        <img src="cd7e589c-0538-4fd6-adc7-59968889b982.JPG" alt="Fresh Harvested Green Cardamom Pods in Hand" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-4 text-center">
+                        <span class="text-[10px] uppercase font-bold text-emerald-800 bg-emerald-100 px-2.5 py-1 rounded-md">Farm Harvest</span>
+                        <h3 class="font-bold font-serif text-forest-950 text-base mt-2">Extra Bold 8mm +</h3>
+                        <p class="text-xs text-slate-500 mt-1">Carefully Graded, Premium 8mm + cardamom</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3: Cardamom Bowl Presentation -->
+                <div class="group rounded-3xl bg-white border border-forest-800/10 p-3 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between">
+                    <div class="overflow-hidden rounded-2xl bg-forest-900">
+                        <img src="photo-output.jpg" alt="Bowl of Pure Idukki Green Cardamom" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-4 text-center">
+                        <span class="text-[10px] uppercase font-bold text-gold-700 bg-gold-500/10 px-2.5 py-1 rounded-md">Grade A Selection</span>
+                        <h3 class="font-bold font-serif text-forest-950 text-base mt-2">Rich Green Colour</h3>
+                        <p class="text-xs text-slate-500 mt-1">Selected for an attractive green appearance</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4: Brand Artwork Poster -->
+                <div class="group rounded-3xl bg-white border border-forest-800/10 p-3 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between">
+                    <div class="overflow-hidden rounded-2xl bg-forest-900">
+                        <img src="Alphonsa Spices_ Misty Hills Cardamom Branding.png" alt="Alphonsa Spices Misty Hills Poster" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-4 text-center">
+                        <span class="text-[10px] uppercase font-bold text-forest-900 bg-forest-100 px-2.5 py-1 rounded-md">Plantation Brand</span>
+                        <h3 class="font-bold font-serif text-forest-950 text-base mt-2">Intense Natural Aroma</h3>
+                        <p class="text-xs text-slate-500 mt-1">Delivers the distinctive fragrance and flavour of cardamom</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-24 bg-forest-900 text-white relative overflow-hidden border-b border-gold-500/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <div class="space-y-6">
+                    <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-forest-800 border border-gold-500/30 text-gold-300 text-xs font-bold uppercase tracking-wider">
+                        <i class="fa-solid fa-mountain text-gold-400"></i>
+                        <span>Vellaramkunnu, Idukki Heritage</span>
+                    </div>
+
+                    <h2 class="text-3xl sm:text-5xl font-bold font-serif leading-tight">
+                        Rooted In The High Altitude Spice Gardens Of Kerala
+                    </h2>
+
+                    <p class="text-emerald-100 leading-relaxed text-sm sm:text-base font-light">
+                        <strong class="text-gold-300 font-semibold">ALPHONSA SPICES</strong> is based in Pathumury Road, Vellaramkunnu, Idukki—a region world-famous for producing the highest grade of green cardamom and black pepper due to its cool climate, rich soil, and misty altitude.
+                    </p>
+
+                    <p class="text-emerald-200 leading-relaxed text-xs sm:text-sm">
+                        By eliminating middle-men and sourcing directly from local Idukki plantation farmers, we ensure our spices retain maximum essential oils, rich flavor, and natural aroma without any chemical polishing or artificial coloring.
+                    </p>
+
+                    <!-- Key Pillars -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                        <div class="p-4 rounded-2xl bg-forest-950/60 border border-gold-500/20">
+                            <div class="flex items-center space-x-3 mb-2">
+                                <i class="fa-solid fa-leaf text-gold-400 text-lg"></i>
+                                <h4 class="font-bold text-white text-sm">Sourcing Direct from Farmers</h4>
+                            </div>
+                            <p class="text-xs text-emerald-200">Handpicked by experienced local growers in Vellaramkunnu.</p>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-forest-950/60 border border-gold-500/20">
+                            <div class="flex items-center space-x-3 mb-2">
+                                <i class="fa-solid fa-sun text-gold-400 text-lg"></i>
+                                <h4 class="font-bold text-white text-sm">Careful Sorting & Selection</h4>
+                            </div>
+                            <p class="text-xs text-emerald-200">Carefully dried and graded for maximum flavor lock.</p>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-forest-950/60 border border-gold-500/20">
+                            <div class="flex items-center space-x-3 mb-2">
+                                <i class="fa-solid fa-stamp text-gold-400 text-lg"></i>
+                                <h4 class="font-bold text-white text-sm">FSSAI & GST Compliant</h4>
+                            </div>
+                            <p class="text-xs text-emerald-200">Certified for quality, hygienic packing, and safety.</p>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-forest-950/60 border border-gold-500/20">
+                            <div class="flex items-center space-x-3 mb-2">
+                                <i class="fa-solid fa-box-open text-gold-400 text-lg"></i>
+                                <h4 class="font-bold text-white text-sm">Hygienic Zip-Lock Pouch</h4>
+                            </div>
+                            <p class="text-xs text-emerald-200">Sealed to maintain long-lasting freshness in your pantry.</p>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 flex flex-wrap items-center gap-4">
+                        <a href="#contact" class="px-6 py-3 rounded-xl bg-gold-500 hover:bg-gold-400 text-forest-950 font-extrabold text-xs uppercase tracking-wider shadow-xl transition-all">
+                            Get In Touch With Us
+                        </a>
+                        <span class="text-xs text-emerald-300 italic"><i class="fa-solid fa-check text-gold-400 mr-1"></i> Retail & Wholesale Orders Welcome</span>
+                    </div>
+                </div>
+
+                <!-- Right Pouch Display Feature -->
+                <div class="relative flex justify-center">
+                    <div class="relative max-w-md w-full bg-forest-950 p-6 rounded-3xl border-2 border-gold-500/40 shadow-2xl text-center">
+                        <div class="mb-4">
+                            <span class="text-[10px] font-bold text-gold-400 uppercase tracking-widest px-3 py-1 bg-forest-900 rounded-full border border-gold-500/20">Official Product Pack</span>
+                        </div>
+                        <img src="CARDAMOM 2.jpg" alt="Alphonsa Spices Green Cardamom Official Pouch" class="w-full h-auto max-h-96 object-contain rounded-2xl mx-auto my-2">
+                        <div class="pt-4 border-t border-gold-500/20 text-left space-y-2">
+                            <div class="flex justify-between text-xs">
+                                <span class="text-emerald-300 font-semibold">FSSAI Registration:</span>
+                                <span class="text-gold-300 font-bold">21326178000581</span>
+                            </div>
+                            <div class="flex justify-between text-xs">
+                                <span class="text-emerald-300 font-semibold">GSTIN Number:</span>
+                                <span class="text-gold-300 font-bold">32PAVPS3058G1ZY</span>
+                            </div>
+                            <div class="flex justify-between text-xs">
+                                <span class="text-emerald-300 font-semibold">Origin:</span>
+                                <span class="text-white font-bold">Vellaramkunnu, Idukki, Kerala</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Showcase Section -->
+    <section id="products" class="py-24 bg-cream border-b border-forest-800/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-700 font-bold text-xs uppercase tracking-widest px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30">Fresh From Plantation</span>
+                <h2 class="text-3xl sm:text-5xl font-bold font-serif text-forest-950 mt-3">Our Main Product Range</h2>
+                <p class="mt-4 text-slate-600 text-sm sm:text-base">Select any item to order directly via WhatsApp or Phone call.</p>
+            </div>
+
+            <!-- Product Showcase Grid (Clean CSS & Vector Icon Based Cards as requested) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Item 1: Green Cardamom (Featured product with real pouch graphic) -->
+                <div class="group rounded-3xl bg-white border-2 border-gold-500/40 p-6 shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute top-4 right-4 bg-gold-500 text-forest-950 text-[10px] font-extrabold uppercase px-3 py-1 rounded-full shadow">
+                        Idukki Special
+                    </div>
+                    <div>
+                        <div class="w-16 h-16 rounded-2xl bg-forest-900 text-gold-400 flex items-center justify-center text-3xl mb-6 shadow-md border border-gold-500/30">
+                            <i class="fa-solid fa-seedling"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold font-serif text-forest-950">Green Cardamom</h3>
+                        <p class="text-gold-700 font-bold text-xs uppercase tracking-wider mt-1">(Elakka / Elaichi)</p>
+                        <p class="text-slate-600 text-xs leading-relaxed mt-3">
+                            Cardamom from Vellaramkunnu. High essential oil concentration with intense sweet aroma and dark rich seeds.
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-slate-100 flex flex-wrap gap-2">
+                            <span class="text-[10px] font-bold px-2.5 py-1 rounded-md bg-forest-50 text-forest-800">All Grade</span>
+                            <span class="text-[10px] font-bold px-2.5 py-1 rounded-md bg-forest-50 text-forest-800">100g / 250g / 500g / 1kg</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 flex gap-3">
+                        <a href="https://wa.me/917907366078?text=Hello%20Alphonsa%20Spices%2C%20I%20want%20to%20order%20Green%20Cardamom." target="_blank" class="w-full py-3 rounded-xl bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-400 hover:to-gold-500 text-forest-950 font-extrabold text-xs uppercase tracking-wider flex items-center justify-center space-x-2 shadow-md">
+                            <i class="fa-brands fa-whatsapp text-base"></i>
+                            <span>Inquire Cardamom</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Item 2: Black Pepper -->
+                <div class="group rounded-3xl bg-white border border-forest-800/10 p-6 shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-16 h-16 rounded-2xl bg-forest-900 text-gold-400 flex items-center justify-center text-3xl mb-6 shadow-md border border-gold-500/30">
+                            <i class="fa-solid fa-circle-dot"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold font-serif text-forest-950">Black Pepper</h3>
+                        <p class="text-gold-700 font-bold text-xs uppercase tracking-wider mt-1">(Kurumulaku / Black Gold)</p>
+                        <p class="text-slate-600 text-xs leading-relaxed mt-3">
+                            Bold, unpolished Idukki black pepper corns. Cured traditionally to preserve full piperine spice, sharp bite, and deep aroma.
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-slate-100 flex flex-wrap gap-2">
+                            <span class="text-[10px] font-bold px-2.5 py-1 rounded-md bg-forest-50 text-forest-800">Extra Bold Grain</span>
+                            <span class="text-[10px] font-bold px-2.5 py-1 rounded-md bg-forest-50 text-forest-800">250g / 500g / 1kg</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 flex gap-3">
+                        <a href="https://wa.me/917907366078?text=Hello%20Alphonsa%20Spices%2C%20I%20want%20to%20order%20Black%20Pepper." target="_blank" class="w-full py-3 rounded-xl bg-forest-900 hover:bg-forest-800 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center space-x-2 shadow-md">
+                            <i class="fa-brands fa-whatsapp text-base text-gold-400"></i>
+                            <span>Inquire Black Pepper</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Item 3: Coffee Beans -->
+                <div class="group rounded-3xl bg-white border border-forest-800/10 p-6 shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-16 h-16 rounded-2xl bg-forest-900 text-gold-400 flex items-center justify-center text-3xl mb-6 shadow-md border border-gold-500/30">
+                            <i class="fa-solid fa-mug-hot"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold font-serif text-forest-950">Coffee Beans</h3>
+                        <p class="text-gold-700 font-bold text-xs uppercase tracking-wider mt-1">(Kappikuru)</p>
+                        <p class="text-slate-600 text-xs leading-relaxed mt-3">
+                            Single-origin coffee beans grown under the canopy of Idukki spice trees. Rich roast profile with earthy aroma and chocolate notes.
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-slate-100 flex flex-wrap gap-2">
+                            <span class="text-[10px] font-bold px-2.5 py-1 rounded-md bg-forest-50 text-forest-800">Whole Beans / Ground</span>
+                            <span class="text-[10px] font-bold px-2.5 py-1 rounded-md bg-forest-50 text-forest-800">250g / 500g</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 flex gap-3">
+                        <a href="https://wa.me/917907366078?text=Hello%20Alphonsa%20Spices%2C%20I%20want%20to%20order%20Coffee%20Beans." target="_blank" class="w-full py-3 rounded-xl bg-forest-900 hover:bg-forest-800 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center space-x-2 shadow-md">
+                            <i class="fa-brands fa-whatsapp text-base text-gold-400"></i>
+                            <span>Inquire Coffee Beans</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Item 4: Tea Powders -->
+                <div class="group rounded-3xl bg-white border border-forest-800/10 p-6 shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-16 h-16 rounded-2xl bg-forest-900 text-gold-400 flex items-center justify-center text-3xl mb-6 shadow-md border border-gold-500/30">
+                            <i class="fa-solid fa-leaf"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold font-serif text-forest-950">Tea Powders</h3>
+                        <p class="text-gold-700 font-bold text-xs uppercase tracking-wider mt-1">(Sourced from Tea Estates)</p>
+                        <p class="text-slate-600 text-xs leading-relaxed mt-3">
+                            Freshly processed tea leaves from high-altitude Idukki tea gardens. Sourced from Tea Estates in Idukki, Vandiperiyar
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-slate-100 flex flex-wrap gap-2">
+                            <span class="text-[10px] font-bold px-2.5 py-1 rounded-md bg-forest-50 text-forest-800">Super Dust / Premium Leaf</span>
+                            <span class="text-[10px] font-bold px-2.5 py-1 rounded-md bg-forest-50 text-forest-800">250g / 500g / 1kg</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 flex gap-3">
+                        <a href="https://wa.me/917907366078?text=Hello%20Alphonsa%20Spices%2C%20I%20want%20to%20order%20Tea%20Powder." target="_blank" class="w-full py-3 rounded-xl bg-forest-900 hover:bg-forest-800 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center space-x-2 shadow-md">
+                            <i class="fa-brands fa-whatsapp text-base text-gold-400"></i>
+                            <span>Inquire Tea Powder</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Item 5: Curry Masalas -->
+                <div class="group rounded-3xl bg-white border border-forest-800/10 p-6 shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-16 h-16 rounded-2xl bg-forest-900 text-gold-400 flex items-center justify-center text-3xl mb-6 shadow-md border border-gold-500/30">
+                            <i class="fa-solid fa-mortar-pestle"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold font-serif text-forest-950">Curry Masalas</h3>
+                        <p class="text-gold-700 font-bold text-xs uppercase tracking-wider mt-1">(Authentic Kerala Blends)</p>
+                        <p class="text-slate-600 text-xs leading-relaxed mt-3">
+                            Traditional recipes crafted from 100% pure whole spices. Includes Garam Masala, Meat Masala, Chicken Masala, and Fish Curry Powder.
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-slate-100 flex flex-wrap gap-2">
+                            <span class="text-[10px] font-bold px-2.5 py-1 rounded-md bg-forest-50 text-forest-800">No Preservatives</span>
+                            <span class="text-[10px] font-bold px-2.5 py-1 rounded-md bg-forest-50 text-forest-800">100g / 250g Packs</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 flex gap-3">
+                        <a href="https://wa.me/917907366078?text=Hello%20Alphonsa%20Spices%2C%20I%20want%20to%20order%20Curry%20Masalas." target="_blank" class="w-full py-3 rounded-xl bg-forest-900 hover:bg-forest-800 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center space-x-2 shadow-md">
+                            <i class="fa-brands fa-whatsapp text-base text-gold-400"></i>
+                            <span>Inquire Curry Masalas</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Bulk Ordering CTA Card -->
+                <div class="group rounded-3xl bg-gradient-to-br from-forest-950 to-forest-900 border border-gold-500/40 p-6 shadow-xl text-white flex flex-col justify-between">
+                    <div>
+                        <div class="w-16 h-16 rounded-2xl bg-gold-500 text-forest-950 flex items-center justify-center text-3xl mb-6 shadow-md">
+                            <i class="fa-solid fa-boxes-packing"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold font-serif text-gold-300">Bulk & Wholesale</h3>
+                        <p class="text-emerald-200 font-semibold text-xs uppercase tracking-wider mt-1">Direct Plantation Supply</p>
+                        <p class="text-emerald-100 text-xs leading-relaxed mt-3">
+                            Looking for bulk cardamom, pepper, or custom spice packaging for catering, exports, or retail resale? We offer competitive rates directly from Idukki.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-forest-800 flex flex-col gap-2">
+                        <a href="tel:7907366078" class="w-full py-3 rounded-xl bg-gold-500 text-forest-950 font-extrabold text-xs uppercase tracking-wider flex items-center justify-center space-x-2 shadow-lg">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>Call 7907366078</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews Section -->
+    <section id="reviews" class="py-24 bg-forest-950 text-white border-b border-gold-500/20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-400 font-bold text-xs uppercase tracking-widest px-3 py-1 rounded-full bg-forest-900 border border-gold-500/30">Verified Customer Feedback</span>
+                <h2 class="text-3xl sm:text-5xl font-bold font-serif mt-3">What Our Customers Says</h2>
+                <p class="mt-4 text-emerald-200 text-sm sm:text-base font-light">Real reviews from spice buyers and families across India.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Review 1 -->
+                <div class="p-8 rounded-3xl bg-forest-900 border border-gold-500/20 shadow-xl relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-gold-400 space-x-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-emerald-100 text-sm leading-relaxed italic mb-6">
+                            "I ordered cardamom through this website and received a very good-quality product. I am highly satisfied with the quality and overall experience."
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-3 pt-4 border-t border-forest-800">
+                        <div class="w-10 h-10 rounded-full bg-gold-500 text-forest-950 font-bold flex items-center justify-center text-sm">
+                            MN
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">Nandhakrishnan Murali</h4>
+                            <p class="text-xs text-gold-400">Ponkunnam, Kottayam</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="p-8 rounded-3xl bg-forest-900 border border-gold-500/20 shadow-xl relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-gold-400 space-x-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-emerald-100 text-sm leading-relaxed italic mb-6">
+                            "Ordered black pepper and cardamom directly to Mumbai. Fast dispatch, excellent zip-lock packaging, and top tier quality."
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-3 pt-4 border-t border-forest-800">
+                        <div class="w-10 h-10 rounded-full bg-gold-500 text-forest-950 font-bold flex items-center justify-center text-sm">
+                            PK
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">V Aravind Kumar</h4>
+                            <p class="text-xs text-gold-400">Thanjavur, Tamil Nadu</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="p-8 rounded-3xl bg-forest-900 border border-gold-500/20 shadow-xl relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-gold-400 space-x-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-emerald-100 text-sm leading-relaxed italic mb-6">
+                            "During my trip to Thekkady, I visited the Alphonsa Spices shop at Vellaramkunnu and My friend Adone kindly arranged a visit to the cardamom plantation. It was a wonderful & Memorable experience"
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-3 pt-4 border-t border-forest-800">
+                        <div class="w-10 h-10 rounded-full bg-gold-500 text-forest-950 font-bold flex items-center justify-center text-sm">
+                            GR
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">Priya Sharma</h4>
+                            <p class="text-xs text-gold-400">Jaipur, Rajasthan</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Of Shop Section -->
+    <section id="location" class="py-24 bg-cream border-b border-forest-800/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-700 font-bold text-xs uppercase tracking-widest px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30">Store Visit & Directions</span>
+                <h2 class="text-3xl sm:text-5xl font-bold font-serif text-forest-950 mt-3">Location of Shop</h2>
+                <p class="mt-4 text-slate-600 text-sm sm:text-base">Visit our store in Vellaramkunnu, Idukki to touch, feel, and aroma-test our fresh spice harvest.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Address Details Card -->
+                <div class="lg:col-span-5 bg-white border border-forest-800/10 p-8 rounded-3xl shadow-xl space-y-6">
+                    <div class="flex items-center space-x-3 pb-4 border-b border-slate-100">
+                        <div class="w-12 h-12 rounded-2xl bg-forest-900 text-gold-400 flex items-center justify-center text-xl font-bold">
+                            <i class="fa-solid fa-store"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold font-serif text-forest-950">ALPHONSA SPICES</h3>
+                            <p class="text-xs text-gold-700 font-bold uppercase tracking-wider">Office Address</p>
+                        </div>
+                    </div>
+
+                    <!-- Complete Address Block -->
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3.5">
+                            <i class="fa-solid fa-location-dot text-gold-600 text-lg mt-1"></i>
+                            <div class="text-sm text-slate-700 leading-relaxed">
+                                <strong class="text-forest-950 block font-bold text-base">Shop Address:</strong>
+                                3/585, Vettickal Building,<br>
+                                Pathumury Road, Vellaramkunnu,<br>
+                                Idukki District, Kerala - 685535
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-3.5">
+                            <i class="fa-solid fa-phone text-gold-600 text-base mt-1"></i>
+                            <div class="text-sm text-slate-700">
+                                <strong class="text-forest-950 block font-bold">Mobile Numbers:</strong>
+                                <div class="flex flex-col gap-1 mt-1 font-semibold text-forest-900">
+                                    <a href="tel:7907366078" class="hover:text-gold-600"><i class="fa-solid fa-mobile-screen text-xs mr-1 text-gold-500"></i> 7907366078  ( Office )</a>
+                                    <a href="tel:7907308602" class="hover:text-gold-600"><i class="fa-solid fa-mobile-screen text-xs mr-1 text-gold-500"></i> 7907308602  ( Adone Saju )</a>
+                                    <a href="tel:9947960821" class="hover:text-gold-600"><i class="fa-solid fa-mobile-screen text-xs mr-1 text-gold-500"></i> 9947960821  ( Saju Vettickal )</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-3.5">
+                            <i class="fa-solid fa-envelope text-gold-600 text-base mt-1"></i>
+                            <div class="text-sm text-slate-700">
+                                <strong class="text-forest-950 block font-bold">Email Inquiry:</strong>
+                                <a href="mailto:alphonsaspices26@gmail.com" class="text-forest-800 hover:underline font-semibold">alphonsaspices26@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-3.5">
+                            <i class="fa-brands fa-instagram text-gold-600 text-base mt-1"></i>
+                            <div class="text-sm text-slate-700">
+                                <strong class="text-forest-950 block font-bold">Instagram Handle:</strong>
+                                <a href="https://instagram.com/Alphonsa.spices" target="_blank" class="text-forest-800 hover:underline font-semibold">@alphonsa.spices, @adone.saju</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="pt-4 border-t border-slate-100 flex flex-col sm:flex-row gap-3">
+                        <button onclick="copyAddress()" class="w-full py-3 rounded-xl bg-forest-100 hover:bg-forest-200 text-forest-900 font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-copy"></i>
+                            <span>Copy Address</span>
+                        </button>
+                        <a href="https://maps.google.com/?q=Vellaramkunnu+Idukki+Kerala" target="_blank" class="w-full py-3 rounded-xl bg-forest-900 hover:bg-forest-800 text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-diamond-turn-right text-gold-400"></i>
+                            <span>Get Directions</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Google Map Embed Column -->
+                <div class="lg:col-span-7 bg-white p-3 rounded-3xl border border-forest-800/10 shadow-xl h-[480px]">
+                    <div class="w-full h-full rounded-2xl overflow-hidden relative">
+                        <iframe 
+                            title="Alphonsa Spices Vellaramkunnu Location Map"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31485.46781292157!2d77.062083!3d9.610582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b06fa2a6320a1eb%3A0xb3cfbf324e94ef3b!2sVellaramkunnu%2C%20Kerala%20685535!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Contact & WhatsApp Order Form Section -->
+    <section id="contact" class="py-24 bg-forest-900 text-white border-b border-gold-500/20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-gold-400 font-bold text-xs uppercase tracking-widest px-3 py-1 rounded-full bg-forest-950 border border-gold-500/30">Direct Inquiry & Orders</span>
+                <h2 class="text-3xl sm:text-5xl font-bold font-serif mt-3">Contact Us</h2>
+                <p class="mt-3 text-emerald-200 text-sm">Send us a message and it will open directly in WhatsApp for instant response.</p>
+            </div>
+
+            <form id="whatsapp-form" onsubmit="sendWhatsApp(event)" class="bg-forest-950 p-8 sm:p-10 rounded-3xl border border-gold-500/30 shadow-2xl space-y-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-gold-300 mb-2">Your Name *</label>
+                        <input type="text" id="cust-name" required placeholder="Enter your name" class="w-full px-4 py-3 rounded-xl bg-forest-900 border border-gold-500/30 text-white text-sm focus:outline-none focus:border-gold-400">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-gold-300 mb-2">Phone Number *</label>
+                        <input type="tel" id="cust-phone" required placeholder="Enter your phone number" class="w-full px-4 py-3 rounded-xl bg-forest-900 border border-gold-500/30 text-white text-sm focus:outline-none focus:border-gold-400">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-gold-300 mb-2">Interested Product</label>
+                        <select id="cust-product" class="w-full px-4 py-3 rounded-xl bg-forest-900 border border-gold-500/30 text-white text-sm focus:outline-none focus:border-gold-400">
+                            <option value="Green Cardamom">Green Cardamom (Elakka)</option>
+                            <option value="Black Pepper">Black Pepper (Kurumulaku)</option>
+                            <option value="Coffee Beans">Coffee Beans</option>
+                            <option value="Tea Powders">Tea Powders</option>
+                            <option value="Curry Masalas">Curry Masalas</option>
+                            <option value="Wholesale Bulk Order">Wholesale / Bulk Order Inquiry</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-gold-300 mb-2">Quantity Needed</label>
+                        <input type="text" id="cust-qty" placeholder="e.g. 500g, 1kg, 10kg" class="w-full px-4 py-3 rounded-xl bg-forest-900 border border-gold-500/30 text-white text-sm focus:outline-none focus:border-gold-400">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase text-gold-300 mb-2">Special Message</label>
+                    <textarea id="cust-msg" rows="3" placeholder="Enter your location or any questions..." class="w-full px-4 py-3 rounded-xl bg-forest-900 border border-gold-500/30 text-white text-sm focus:outline-none focus:border-gold-400"></textarea>
+                </div>
+
+                <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-400 hover:to-gold-500 text-forest-950 font-extrabold text-sm uppercase tracking-wider transition-all shadow-xl flex items-center justify-center space-x-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Send Order Inquiry via WhatsApp</span>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-forest-950 text-emerald-100 pt-16 pb-12 border-t border-gold-500/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-forest-800">
+                
+                <!-- Col 1: Brand Info -->
+                <div class="space-y-4">
+                    <h3 class="font-serif text-2xl font-bold text-white tracking-wide">ALPHONSA SPICES</h3>
+                    <p class="text-xs text-gold-300 font-serif italic">A venture by Adone Raphel Saju</p>
+                    <p class="text-xs text-emerald-200 leading-relaxed">
+                        MSc Computer Science graduate and former Cybersecurity Trainer in Kochi, Adone Raphel Saju founded Alphonsa Spices, Celebrating Idukki's finest spices.
+                    </p>
+                    <div class="pt-2 flex items-center space-x-4">
+                        <a href="https://instagram.com/Alphonsa.spices" target="_blank" class="w-9 h-9 rounded-lg bg-forest-900 text-gold-400 flex items-center justify-center hover:bg-gold-500 hover:text-forest-950 transition-colors">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/917907366078" target="_blank" class="w-9 h-9 rounded-lg bg-forest-900 text-gold-400 flex items-center justify-center hover:bg-gold-500 hover:text-forest-950 transition-colors">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                        <a href="tel:7907366078" class="w-9 h-9 rounded-lg bg-forest-900 text-gold-400 flex items-center justify-center hover:bg-gold-500 hover:text-forest-950 transition-colors">
+                            <i class="fa-solid fa-phone"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div class="space-y-3">
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider">Quick Navigation</h4>
+                    <ul class="space-y-2 text-xs font-medium">
+                        <li><a href="#home" class="hover:text-gold-400 transition-colors">Home Page</a></li>
+                        <li><a href="#about" class="hover:text-gold-400 transition-colors">About Our Heritage</a></li>
+                        <li><a href="#products" class="hover:text-gold-400 transition-colors">Product Showcase</a></li>
+                        <li><a href="#reviews" class="hover:text-gold-400 transition-colors">Customer Reviews</a></li>
+                        <li><a href="#location" class="hover:text-gold-400 transition-colors">Shop Address & Location</a></li>
+                        <li><a href="#contact" class="hover:text-gold-400 transition-colors">Contact Form</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Products -->
+                <div class="space-y-3">
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider">Spices Products</h4>
+                    <ul class="space-y-2 text-xs font-medium text-emerald-200">
+                        <li><i class="fa-solid fa-check text-gold-500 text-[10px] mr-1"></i> Green Cardamom (Elakka)</li>
+                        <li><i class="fa-solid fa-check text-gold-500 text-[10px] mr-1"></i> Black Pepper (Kurumulaku)</li>
+                        <li><i class="fa-solid fa-check text-gold-500 text-[10px] mr-1"></i> Roasted Coffee Beans</li>
+                        <li><i class="fa-solid fa-check text-gold-500 text-[10px] mr-1"></i> Special Tea Powders</li>
+                        <li><i class="fa-solid fa-check text-gold-500 text-[10px] mr-1"></i> Kerala Curry Masalas</li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Address Details -->
+                <div class="space-y-3">
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider">Store Location</h4>
+                    <p class="text-xs text-emerald-200 leading-relaxed">
+                        3/585, Vettickal Building,<br>
+                        Pathumury Road, Vellaramkunnu,<br>
+                        Idukki, Kerala - 685535
+                    </p>
+                    <div class="text-xs text-gold-300 font-semibold space-y-1 pt-1">
+                        <p>FSSAI: 21326178000581</p>
+                        <p>GSTIN: 32PAVPS3058G1ZY</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom Copyright -->
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-emerald-300 text-center sm:text-left gap-4">
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> (Adone Raphel Saju, ALPHONSA SPICES. All Rights Reserved.</p>
+                <p class="text-[11px] text-emerald-400">Crafted with care for Idukki Plantation Produce</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Interactions -->
+    <script>
+        // Mobile Drawer Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Copy Address Functionality
+        function copyAddress() {
+            const addressText = "ALPHONSA SPICES, 3/585, Vettickal Building, Pathumury Road, Vellaramkunnu, Idukki, Kerala - 685535. Mobile: 7907366078, 7907308602";
+            
+            // Fallback execCommand for iframe compatibility
+            const el = document.createElement('textarea');
+            el.value = addressText;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+
+            showToast("Address copied to clipboard!");
+        }
+
+        // WhatsApp Form Dispatch Function
+        function sendWhatsApp(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('cust-name').value;
+            const phone = document.getElementById('cust-phone').value;
+            const product = document.getElementById('cust-product').value;
+            const qty = document.getElementById('cust-qty').value || 'Standard Pack';
+            const msg = document.getElementById('cust-msg').value || 'None';
+
+            const text = `Hello Alphonsa Spices,%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Phone:* ${encodeURIComponent(phone)}%0A*Product:* ${encodeURIComponent(product)}%0A*Quantity:* ${encodeURIComponent(qty)}%0A*Message/Address:* ${encodeURIComponent(msg)}`;
+            
+            window.open(`https://wa.me/917907366078?text=${text}`, '_blank');
+        }
+
+        // Custom Toast Notification System
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-message');
+            
+            toastMsg.innerText = message;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
